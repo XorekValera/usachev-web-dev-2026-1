@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Собрать ланч — ЛанчБокс</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="css/order.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <h1 class="logo">ЛанчБокс</h1>
+      <nav class="nav" aria-label="Основная навигация">
+        <a class="nav__link" href="index.html">Главная</a>
+        <a class="nav__link active" href="menu.html">Собрать ланч</a>
+        <a class="nav__link" href="checkout.html">Оформить заказ</a>
+        <a class="nav__link" href="orders.html">Заказы</a>
+        <a class="nav__link" href="index.html#contacts">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <section class="menu-section" data-category="soup">
+        <h2 class="menu-section__title">Супы</h2>
+        <div class="filters">
+          <button class="filter" type="button" data-kind="fish">Рыбный</button>
+          <button class="filter" type="button" data-kind="meat">Мясной</button>
+          <button class="filter" type="button" data-kind="veg">Вегетарианский</button>
+        </div>
+        <div class="dishes"></div>
+      </section>
+
+      <section class="menu-section" data-category="main_course">
+        <h2 class="menu-section__title">Главные блюда</h2>
+        <div class="filters">
+          <button class="filter" type="button" data-kind="fish">Рыбное</button>
+          <button class="filter" type="button" data-kind="meat">Мясное</button>
+          <button class="filter" type="button" data-kind="veg">Вегетарианское</button>
+        </div>
+        <div class="dishes"></div>
+      </section>
+
+      <section class="menu-section" data-category="salad">
+        <h2 class="menu-section__title">Салаты и стартеры</h2>
+        <div class="filters">
+          <button class="filter" type="button" data-kind="fish">Рыбный</button>
+          <button class="filter" type="button" data-kind="meat">Мясной</button>
+          <button class="filter" type="button" data-kind="veg">Вегетарианский</button>
+        </div>
+        <div class="dishes"></div>
+      </section>
+
+      <section class="menu-section" data-category="drink">
+        <h2 class="menu-section__title">Напитки</h2>
+        <div class="filters">
+          <button class="filter" type="button" data-kind="cold">Холодный</button>
+          <button class="filter" type="button" data-kind="hot">Горячий</button>
+        </div>
+        <div class="dishes"></div>
+      </section>
+
+      <section class="menu-section" data-category="dessert">
+        <h2 class="menu-section__title">Десерты</h2>
+        <div class="filters">
+          <button class="filter" type="button" data-kind="small">Маленькая порция</button>
+          <button class="filter" type="button" data-kind="medium">Средняя порция</button>
+          <button class="filter" type="button" data-kind="large">Большая порция</button>
+        </div>
+        <div class="dishes"></div>
+      </section>
+
+      <section class="lunch-variants">
+        <h2 class="menu-section__title">Варианты ланча</h2>
+        <div class="lunch-variants__grid">
+          <div class="lunch-variant">
+            <div class="lunch-item">
+              <img class="lunch-item__image" src="images/icons/soup.png" width="80" height="80" alt="Суп">
+              <p class="lunch-item__caption">Суп</p>
+            </div>
+            <div class="lunch-item">
+              <img class="lunch-item__image" src="images/icons/main.png" width="80" height="80" alt="Главное блюдо">
+              <p class="lunch-item__caption">Главное блюдо</p>
+            </div>
+            <div class="lunch-item">
+              <img class="lunch-item__image" src="images/icons/salad.png" width="80" height="80" alt="Салат">
+              <p class="lunch-item__caption">Салат</p>
+            </div>
+            <div class="lunch-item">
+              <img class="lunch-item__image" src="images/icons/drink.png" width="80" height="80" alt="Напиток">
+              <p class="lunch-item__caption">Напиток</p>
+            </div>
+          </div>
+
+          <div class="lunch-variant">
+            <div class="lunch-item">
+              <img class="lunch-item__image" src="images/icons/soup.png" width="80" height="80" alt="Суп">
+              <p class="lunch-item__caption">Суп</p>
+            </div>
+            <div class="lunch-item">
+              <img class="lunch-item__image" src="images/icons/main.png" width="80" height="80" alt="Главное блюдо">
+              <p class="lunch-item__caption">Главное блюдо</p>
+            </div>
+            <div class="lunch-item">
+              <img class="lunch-item__image" src="images/icons/drink.png" width="80" height="80" alt="Напиток">
+              <p class="lunch-item__caption">Напиток</p>
+            </div>
+          </div>
+
+          <div class="lunch-variant">
+            <div class="lunch-item">
+              <img class="lunch-item__image" src="images/icons/soup.png" width="80" height="80" alt="Суп">
+              <p class="lunch-item__caption">Суп</p>
+            </div>
+            <div class="lunch-item">
+              <img class="lunch-item__image" src="images/icons/salad.png" width="80" height="80" alt="Салат">
+              <p class="lunch-item__caption">Салат</p>
+            </div>
+            <div class="lunch-item">
+              <img class="lunch-item__image" src="images/icons/drink.png" width="80" height="80" alt="Напиток">
+              <p class="lunch-item__caption">Напиток</p>
+            </div>
+          </div>
+
+          <div class="lunch-variant">
+            <div class="lunch-item">
+              <img class="lunch-item__image" src="images/icons/main.png" width="80" height="80" alt="Главное блюдо">
+              <p class="lunch-item__caption">Главное блюдо</p>
+            </div>
+            <div class="lunch-item">
+              <img class="lunch-item__image" src="images/icons/salad.png" width="80" height="80" alt="Салат">
+              <p class="lunch-item__caption">Салат</p>
+            </div>
+            <div class="lunch-item">
+              <img class="lunch-item__image" src="images/icons/drink.png" width="80" height="80" alt="Напиток">
+              <p class="lunch-item__caption">Напиток</p>
+            </div>
+          </div>
+
+          <div class="lunch-variant">
+            <div class="lunch-item">
+              <img class="lunch-item__image" src="images/icons/main.png" width="80" height="80" alt="Главное блюдо">
+              <p class="lunch-item__caption">Главное блюдо</p>
+            </div>
+            <div class="lunch-item">
+              <img class="lunch-item__image" src="images/icons/drink.png" width="80" height="80" alt="Напиток">
+              <p class="lunch-item__caption">Напиток</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="dessert-info">
+          <img class="dessert-info__image" src="images/icons/desert.png" width="56" height="56" alt="Десерт">
+          <p class="dessert-info__text">Десерт можно добавить к любому варианту ланча.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div class="order-panel" id="order-panel" hidden>
+    <div class="container order-panel__inner">
+      <p class="order-panel__total">Сумма заказа: <span id="order-panel-total">0</span> ₽</p>
+      <a class="order-panel__link is-disabled" id="checkout-link" href="checkout.html" aria-disabled="true">Перейти к оформлению</a>
+    </div>
+  </div>
+
+  <footer class="footer" id="contacts">
+    <div class="container footer__inner">
+      <p class="footer__text">«ЛанчБокс» — бизнес-ланчи с доставкой по Москве.</p>
+      <p class="footer__text">Телефон: <a class="footer__link" href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+      <p class="footer__text">Email: <a class="footer__link" href="mailto:hello@lunchbox.ru">hello@lunchbox.ru</a></p>
+      <p class="footer__text">Адрес: г. Москва, ул. Политехническая, д. 8</p>
+    </div>
+  </footer>
+
+  <script src="js/config.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/notify.js" defer></script>
+  <script src="js/dishes.js" defer></script>
+  <script src="js/api.js" defer></script>
+  <script src="js/render.js" defer></script>
+  <script src="js/menu.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Заказы — ЛанчБокс</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/form.css">
+  <link rel="stylesheet" href="css/order.css">
+  <link rel="stylesheet" href="css/orders.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <h1 class="logo">ЛанчБокс</h1>
+      <nav class="nav" aria-label="Основная навигация">
+        <a class="nav__link" href="index.html">Главная</a>
+        <a class="nav__link" href="menu.html">Собрать ланч</a>
+        <a class="nav__link" href="checkout.html">Оформить заказ</a>
+        <a class="nav__link active" href="orders.html">Заказы</a>
+        <a class="nav__link" href="index.html#contacts">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <section class="orders-section">
+        <h2 class="section-title">Мои заказы</h2>
+        <p class="orders-empty" id="orders-empty" hidden>У вас пока нет оформленных заказов. <a class="text__link" href="menu.html">Собрать ланч</a></p>
+        <div class="orders-list" id="orders-list"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer" id="contacts">
+    <div class="container footer__inner">
+      <p class="footer__text">«ЛанчБокс» — бизнес-ланчи с доставкой по Москве.</p>
+      <p class="footer__text">Телефон: <a class="footer__link" href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+      <p class="footer__text">Email: <a class="footer__link" href="mailto:hello@lunchbox.ru">hello@lunchbox.ru</a></p>
+      <p class="footer__text">Адрес: г. Москва, ул. Политехническая, д. 8</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="details-modal" hidden>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="details-title">
+      <button class="modal__close" type="button" data-close="details-modal" aria-label="Закрыть">&times;</button>
+      <h2 class="modal__title" id="details-title">Информация о заказе</h2>
+      <div class="modal__content" id="details-content"></div>
+      <div class="modal__actions">
+        <button class="modal__button modal__button--primary" type="button" data-close="details-modal">Ок</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="edit-modal" hidden>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="edit-title">
+      <button class="modal__close" type="button" data-close="edit-modal" aria-label="Закрыть">&times;</button>
+      <h2 class="modal__title" id="edit-title">Редактирование заказа</h2>
+      <form class="modal__form" id="edit-form">
+        <input type="hidden" id="edit-id" name="id">
+        <div class="form-field">
+          <label class="form-label" for="edit-full-name">Имя</label>
+          <input class="form-control" id="edit-full-name" name="full_name" type="text" required>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="edit-email">Email</label>
+          <input class="form-control" id="edit-email" name="email" type="email" required>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="edit-phone">Телефон</label>
+          <input class="form-control" id="edit-phone" name="phone" type="tel" required>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="edit-address">Адрес доставки</label>
+          <input class="form-control" id="edit-address" name="delivery_address" type="text" required>
+        </div>
+        <fieldset class="form-fieldset">
+          <legend class="form-label">Время доставки</legend>
+          <div class="radio-group">
+            <div class="radio-field">
+              <input id="edit-delivery-now" name="delivery_type" type="radio" value="now" required>
+              <label class="form-label form-label--inline" for="edit-delivery-now">Как можно скорее</label>
+            </div>
+            <div class="radio-field">
+              <input id="edit-delivery-by-time" name="delivery_type" type="radio" value="by_time" required>
+              <label class="form-label form-label--inline" for="edit-delivery-by-time">Ко времени</label>
+            </div>
+          </div>
+        </fieldset>
+        <div class="form-field">
+          <label class="form-label" for="edit-delivery-time">Время</label>
+          <input class="form-control" id="edit-delivery-time" name="delivery_time" type="time" min="07:00" max="23:00" step="300">
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="edit-comment">Комментарий</label>
+          <textarea class="form-control form-textarea" id="edit-comment" name="comment" rows="3"></textarea>
+        </div>
+        <div class="modal__actions">
+          <button class="modal__button modal__button--secondary" type="button" data-close="edit-modal">Отмена</button>
+          <button class="modal__button modal__button--primary" type="submit">Сохранить</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="delete-modal" hidden>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="delete-title">
+      <button class="modal__close" type="button" data-close="delete-modal" aria-label="Закрыть">&times;</button>
+      <h2 class="modal__title" id="delete-title">Удаление заказа</h2>
+      <p class="modal__text">Вы уверены, что хотите удалить этот заказ? Действие нельзя отменить.</p>
+      <div class="modal__actions">
+        <button class="modal__button modal__button--secondary" type="button" data-close="delete-modal">Отмена</button>
+        <button class="modal__button modal__button--danger" type="button" id="delete-confirm">Да</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/config.js" defer></script>
+  <script src="js/store.js" defer></script>
+  <script src="js/notify.js" defer></script>
+  <script src="js/dishes.js" defer></script>
+  <script src="js/api.js" defer></script>
+  <script src="js/render.js" defer></script>
+  <script src="js/orders.js" defer></script>
+</body>
+</html>

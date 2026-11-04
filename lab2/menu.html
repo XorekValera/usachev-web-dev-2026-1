@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Собрать ланч — ЛанчБокс</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/menu.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <h1 class="logo">ЛанчБокс</h1>
+      <nav class="nav" aria-label="Основная навигация">
+        <a class="nav__link" href="index.html">Главная</a>
+        <a class="nav__link active" href="menu.html">Собрать ланч</a>
+        <a class="nav__link" href="index.html#contacts">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="container">
+      <section class="menu-section">
+        <h2 class="menu-section__title">Супы</h2>
+        <div class="dishes">
+          <div class="dish">
+            <img class="dish__image" src="images/menu/soups/gazpacho.jpg" width="500" height="500" alt="Гаспачо">
+            <p class="dish__price">195 ₽</p>
+            <p class="dish__name">Гаспачо</p>
+            <p class="dish__count">350 г</p>
+            <button class="dish__button" type="button">Добавить</button>
+          </div>
+          <div class="dish">
+            <img class="dish__image" src="images/menu/soups/mushroom_soup.jpg" width="500" height="500" alt="Грибной суп-пюре">
+            <p class="dish__price">185 ₽</p>
+            <p class="dish__name">Грибной суп-пюре</p>
+            <p class="dish__count">330 г</p>
+            <button class="dish__button" type="button">Добавить</button>
+          </div>
+          <div class="dish">
+            <img class="dish__image" src="images/menu/soups/norwegian_soup.jpg" width="500" height="500" alt="Норвежский суп">
+            <p class="dish__price">270 ₽</p>
+            <p class="dish__name">Норвежский суп</p>
+            <p class="dish__count">350 г</p>
+            <button class="dish__button" type="button">Добавить</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="menu-section">
+        <h2 class="menu-section__title">Главные блюда</h2>
+        <div class="dishes">
+          <div class="dish">
+            <img class="dish__image" src="images/menu/main_course/chickencutletsandmashedpotatoes.jpg" width="500" height="500" alt="Куриные котлеты с картофельным пюре">
+            <p class="dish__price">320 ₽</p>
+            <p class="dish__name">Куриные котлеты с картофельным пюре</p>
+            <p class="dish__count">320 г</p>
+            <button class="dish__button" type="button">Добавить</button>
+          </div>
+          <div class="dish">
+            <img class="dish__image" src="images/menu/main_course/friedpotatoeswithmushrooms1.jpg" width="500" height="500" alt="Жареная картошка с грибами">
+            <p class="dish__price">250 ₽</p>
+            <p class="dish__name">Жареная картошка с грибами</p>
+            <p class="dish__count">300 г</p>
+            <button class="dish__button" type="button">Добавить</button>
+          </div>
+          <div class="dish">
+            <img class="dish__image" src="images/menu/main_course/lasagna.jpg" width="500" height="500" alt="Лазанья">
+            <p class="dish__price">380 ₽</p>
+            <p class="dish__name">Лазанья</p>
+            <p class="dish__count">350 г</p>
+            <button class="dish__button" type="button">Добавить</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="menu-section">
+        <h2 class="menu-section__title">Напитки</h2>
+        <div class="dishes">
+          <div class="dish">
+            <img class="dish__image" src="images/menu/beverages/applejuice.jpg" width="500" height="500" alt="Яблочный сок">
+            <p class="dish__price">120 ₽</p>
+            <p class="dish__name">Яблочный сок</p>
+            <p class="dish__count">250 мл</p>
+            <button class="dish__button" type="button">Добавить</button>
+          </div>
+          <div class="dish">
+            <img class="dish__image" src="images/menu/beverages/orangejuice.jpg" width="500" height="500" alt="Апельсиновый сок">
+            <p class="dish__price">140 ₽</p>
+            <p class="dish__name">Апельсиновый сок</p>
+            <p class="dish__count">250 мл</p>
+            <button class="dish__button" type="button">Добавить</button>
+          </div>
+          <div class="dish">
+            <img class="dish__image" src="images/menu/beverages/cappuccino.jpg" width="500" height="500" alt="Капучино">
+            <p class="dish__price">180 ₽</p>
+            <p class="dish__name">Капучино</p>
+            <p class="dish__count">300 мл</p>
+            <button class="dish__button" type="button">Добавить</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer" id="contacts">
+    <div class="container footer__inner">
+      <p class="footer__text">«ЛанчБокс» — бизнес-ланчи с доставкой по Москве.</p>
+      <p class="footer__text">Телефон: <a class="footer__link" href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+      <p class="footer__text">Email: <a class="footer__link" href="mailto:hello@lunchbox.ru">hello@lunchbox.ru</a></p>
+      <p class="footer__text">Адрес: г. Москва, ул. Политехническая, д. 8</p>
+    </div>
+  </footer>
+</body>
+</html>

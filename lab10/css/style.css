@@ -1,0 +1,276 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #1a1a1a;
+  background-color: #f7f5f2;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.header {
+  margin: 0;
+  padding: 20px 0;
+  background-color: #ffffff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.logo {
+  margin: 0;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 0.5px;
+}
+
+.nav {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__link {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1a1a1a;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.2s ease;
+}
+
+.nav__link:hover,
+.nav__link.active {
+  color: tomato;
+}
+
+.main {
+  flex: 1 0 auto;
+  margin: 0;
+  padding: 40px 0;
+}
+
+.section-title {
+  margin: 0 0 25px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.about {
+  margin: 0 0 50px;
+  padding: 0;
+}
+
+.about__inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.about__image {
+  width: 500px;
+  height: auto;
+  border-radius: 24px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.about__text {
+  margin: 0;
+  padding: 0;
+}
+
+.text {
+  margin: 0 0 15px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #3a3a3a;
+}
+
+.text__link {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: tomato;
+  text-decoration: none;
+}
+
+.text__link:hover {
+  text-decoration: underline;
+}
+
+.advantages {
+  margin: 0 0 50px;
+  padding: 0;
+}
+
+.advantages__list {
+  margin: 0;
+  padding: 0 0 0 20px;
+}
+
+.advantages__item {
+  margin: 0 0 10px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #3a3a3a;
+}
+
+.popular {
+  margin: 0;
+  padding: 0;
+}
+
+.popular__table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.popular__table th,
+.popular__table td {
+  padding: 14px 18px;
+  border: 1px solid #dddddd;
+  text-align: left;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 15px;
+  color: #1a1a1a;
+}
+
+.popular__table th {
+  font-weight: 600;
+  background-color: #f1eee9;
+}
+
+.popular__table td {
+  font-weight: 400;
+}
+
+.footer {
+  margin: 0;
+  padding: 30px 0;
+  background-color: black;
+  color: white;
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer__text {
+  margin: 0;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: white;
+}
+
+.footer__link {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer__link:hover {
+  color: tomato;
+}
+
+@media (max-width: 800px) {
+  .about__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about__image {
+    width: 500px;
+    max-width: 100%;
+  }
+
+  .nav {
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo {
+    text-align: center;
+    width: 100%;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav__link {
+    font-size: 19px;
+  }
+
+  .section-title {
+    text-align: center;
+  }
+
+  .about__image {
+    width: 100%;
+  }
+
+  .popular__table th,
+  .popular__table td {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .popular__table th,
+  .popular__table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+}

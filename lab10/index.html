@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЛанчБокс — бизнес-ланчи с доставкой в офис</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">ЛанчБокс</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Открыть меню">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="main-nav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">О компании</a></li>
+          <li class="nav-item"><a class="nav-link" href="menu.html">Собрать ланч</a></li>
+          <li class="nav-item"><a class="nav-link" href="checkout.html">Оформить заказ</a></li>
+          <li class="nav-item"><a class="nav-link" href="orders.html">Заказы</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacts">Контакты</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero py-5">
+    <div class="container py-lg-4">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <span class="badge hero__badge mb-3">Доставка бизнес-ланчей по Москве</span>
+          <h1 class="display-5 fw-bold mb-4">Вкусный обед в офис — быстро и без забот</h1>
+          <p class="lead text-secondary mb-4">Свежие супы, горячие блюда, салаты, напитки и десерты. Соберите свой идеальный ланч и получите его уже через час.</p>
+          <div class="d-flex flex-column flex-sm-row gap-3">
+            <a class="btn btn-tomato btn-lg px-4" href="menu.html">Собрать ланч</a>
+            <a class="btn btn-outline-dark btn-lg px-4" href="#features">Узнать больше</a>
+          </div>
+          <div class="row g-3 mt-4">
+            <div class="col-4">
+              <p class="hero-stat mb-1">30+</p>
+              <p class="hero-stat-label mb-0">блюд в меню</p>
+            </div>
+            <div class="col-4">
+              <p class="hero-stat mb-1">60</p>
+              <p class="hero-stat-label mb-0">минут доставка</p>
+            </div>
+            <div class="col-4">
+              <p class="hero-stat mb-1">7:00</p>
+              <p class="hero-stat-label mb-0">работаем ежедневно</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <img class="hero__image img-fluid rounded-4 shadow" src="images/lunch.jpg" width="900" height="600" alt="Бизнес-ланч ЛанчБокс">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="py-5 bg-light" id="features">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">Почему выбирают нас</h2>
+        <p class="text-secondary mb-0">Мы продумали каждый этап — от кухни до вашей двери.</p>
+      </div>
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <div class="col">
+          <div class="card h-100 border-0 shadow-sm feature-card">
+            <div class="card-body text-center p-4">
+              <div class="feature-card__icon" aria-hidden="true">🍲</div>
+              <h3 class="h5 fw-semibold">Свежие продукты</h3>
+              <p class="text-secondary mb-0">Готовим каждое утро из проверенных ингредиентов.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 border-0 shadow-sm feature-card">
+            <div class="card-body text-center p-4">
+              <div class="feature-card__icon" aria-hidden="true">🚀</div>
+              <h3 class="h5 fw-semibold">Быстрая доставка</h3>
+              <p class="text-secondary mb-0">Привозим заказ по Москве в течение 60 минут.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 border-0 shadow-sm feature-card">
+            <div class="card-body text-center p-4">
+              <div class="feature-card__icon" aria-hidden="true">🥗</div>
+              <h3 class="h5 fw-semibold">Большой выбор</h3>
+              <p class="text-secondary mb-0">Супы, горячее, салаты, напитки и десерты на любой вкус.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card h-100 border-0 shadow-sm feature-card">
+            <div class="card-body text-center p-4">
+              <div class="feature-card__icon" aria-hidden="true">📱</div>
+              <h3 class="h5 fw-semibold">Удобный заказ</h3>
+              <p class="text-secondary mb-0">Соберите ланч онлайн за пару минут и оплатите при получении.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 cta-section text-white">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-8">
+          <h2 class="fw-bold mb-3">Готовы попробовать?</h2>
+          <p class="lead mb-0">Выберите любимые блюда и оформите заказ. Первый ланч — с комплиментом от шефа.</p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <a class="btn btn-light btn-lg px-4" href="menu.html">Собрать ланч</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5" id="contacts">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-5">
+          <h2 class="fw-bold mb-4">Свяжитесь с нами</h2>
+          <p class="text-secondary">Остались вопросы по меню, доставке или корпоративным заказам? Мы всегда на связи.</p>
+          <ul class="list-unstyled contact-list">
+            <li><strong>Телефон:</strong> <a href="tel:+74951234567">+7 (495) 123-45-67</a></li>
+            <li><strong>Email:</strong> <a href="mailto:hello@lunchbox.ru">hello@lunchbox.ru</a></li>
+            <li><strong>Адрес:</strong> г. Москва, ул. Политехническая, д. 8</li>
+            <li><strong>Часы работы:</strong> ежедневно с 7:00 до 23:00</li>
+          </ul>
+          <div class="alert alert-light border mb-0" role="note">Доставка осуществляется по всей Москве в пределах МКАД.</div>
+        </div>
+        <div class="col-lg-7">
+          <form class="row g-3 p-4 bg-light rounded-4" id="feedback-form" action="#" method="post">
+            <div class="col-md-6">
+              <label class="form-label" for="feedback-name">Имя</label>
+              <input class="form-control" id="feedback-name" name="name" type="text" required placeholder="Иван Иванов">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="feedback-email">Email</label>
+              <input class="form-control" id="feedback-email" name="email" type="email" required placeholder="ivan@example.ru">
+            </div>
+            <div class="col-12">
+              <label class="form-label" for="feedback-message">Сообщение</label>
+              <textarea class="form-control" id="feedback-message" name="message" rows="5" required placeholder="Чем мы можем помочь?"></textarea>
+            </div>
+            <div class="col-12">
+              <button class="btn btn-tomato px-4" type="submit">Отправить</button>
+            </div>
+          </form>
+          <div class="alert alert-success mt-3 mb-0" id="feedback-success" hidden>Спасибо! Мы получили ваше сообщение и скоро свяжемся с вами.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="footer">
+    <div class="container footer__inner">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <p class="footer__brand">ЛанчБокс</p>
+          <p class="footer__text">Бизнес-ланчи с доставкой по Москве. Свежие продукты, продуманное меню и забота о каждом клиенте.</p>
+        </div>
+        <div class="col-md-4">
+          <p class="footer__title">Навигация</p>
+          <ul class="list-unstyled footer__nav">
+            <li><a class="footer__link" href="about.html">О компании</a></li>
+            <li><a class="footer__link" href="menu.html">Собрать ланч</a></li>
+            <li><a class="footer__link" href="checkout.html">Оформить заказ</a></li>
+            <li><a class="footer__link" href="orders.html">Заказы</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <p class="footer__title">Контакты</p>
+          <p class="footer__text">Телефон: <a class="footer__link" href="tel:+74951234567">+7 (495) 123-45-67</a></p>
+          <p class="footer__text">Email: <a class="footer__link" href="mailto:hello@lunchbox.ru">hello@lunchbox.ru</a></p>
+          <p class="footer__text">г. Москва, ул. Политехническая, д. 8</p>
+        </div>
+      </div>
+      <p class="footer__copy">© 2026 ЛанчБокс. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="vendor/bootstrap/bootstrap.bundle.min.js" defer></script>
+  <script src="js/landing.js" defer></script>
+</body>
+</html>

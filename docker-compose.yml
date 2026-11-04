@@ -1,0 +1,9 @@
+name: web-labs
+
+services:
+  labs:
+    build: .
+    container_name: web-labs
+    ports:
+      - "8080:80"
+    restart: unless-stopped
