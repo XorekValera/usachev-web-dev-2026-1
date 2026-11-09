@@ -45,7 +45,7 @@ function renderCheckoutSummary(selected) {
 
   const totalRow = document.createElement("p");
   totalRow.className = "order-total";
-  totalRow.innerHTML = 'Итого: <span id="checkout-total">' + getOrderTotal(DISHES) + "</span> ₽";
+  totalRow.innerHTML = "Итого: <span id=\"checkout-total\">" + getOrderTotal(DISHES) + "</span> ₽";
   summary.append(totalRow);
 }
 
@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    const submitButton = form.querySelector('button[type="submit"]');
+    const submitButton = form.querySelector("button[type=\"submit\"]");
 
     if (submitButton) {
       submitButton.disabled = true;

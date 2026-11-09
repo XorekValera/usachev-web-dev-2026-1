@@ -308,7 +308,7 @@ function openEdit(order) {
   form.elements.delivery_time.value = order.delivery_time || "";
 
   const deliveryType = order.delivery_type === "by_time" ? "by_time" : "now";
-  form.querySelector('input[name="delivery_type"][value="' + deliveryType + '"]').checked = true;
+  form.querySelector("input[name=\"delivery_type\"][value=\"" + deliveryType + "\"]").checked = true;
 
   document.getElementById("edit-modal").hidden = false;
 }
@@ -404,7 +404,7 @@ document.addEventListener("DOMContentLoaded", function () {
         comment: String(formData.get("comment") || "").trim()
       };
 
-      const saveButton = editForm.querySelector('button[type="submit"]');
+      const saveButton = editForm.querySelector("button[type=\"submit\"]");
       saveButton.disabled = true;
 
       try {

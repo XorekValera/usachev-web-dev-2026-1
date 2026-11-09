@@ -48,7 +48,7 @@ document.addEventListener("click", function (event) {
   } else {
     selection[dish.category] = dish.keyword;
 
-    document.querySelectorAll('.dish[data-category="' + dish.category + '"]').forEach(function (item) {
+    document.querySelectorAll(".dish[data-category=\"" + dish.category + "\"]").forEach(function (item) {
       item.classList.remove("selected");
     });
 

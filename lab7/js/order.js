@@ -52,7 +52,7 @@ function updateOrderSummary() {
 
   Object.keys(selectedDishes).forEach(function (category) {
     const dish = selectedDishes[category];
-    const valueElement = document.querySelector('[data-order-category="' + category + '"]');
+    const valueElement = document.querySelector("[data-order-category=\"" + category + "\"]");
     const hiddenInput = document.getElementById(hiddenFields[category]);
 
     if (valueElement) {
