@@ -68,7 +68,7 @@ const sharedGlobals = {
 
 export default [
   {
-    ignores: ["node_modules/**", "**/vendor/**"]
+    ignores: ["node_modules/**", "**/vendor/**", "lab10/bootstrap/**"]
   },
   js.configs.recommended,
   {
