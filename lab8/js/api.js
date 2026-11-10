@@ -1,4 +1,4 @@
-const API_DISHES_URL = "https://edu.std-900.ist.mospolytech.ru/labs/api/dishes";
+const API_DISHES_URL = "https://amd.dedyn.io:15243/labs/api/dishes";
 
 let DISHES = [];
 

@@ -1,4 +1,4 @@
-const API_DISHES_URL = "https://edu.std-900.ist.mospolytech.ru/labs/api/dishes";
+const API_DISHES_URL = buildApiUrl(APP_CONFIG.API_DISHES_PATH);
 
 let DISHES = [];
 

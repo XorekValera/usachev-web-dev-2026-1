@@ -31,7 +31,11 @@ function saveDemoOrders(orders) {
 }
 
 function getApiUrl(path) {
-  return APP_CONFIG.API_BASE + path + "?api_key=" + encodeURIComponent(APP_CONFIG.API_KEY);
+  return buildApiUrl(path);
+}
+
+function getOrdersPath(id) {
+  return APP_CONFIG.API_ORDERS_PATH + (id === undefined ? "" : "/" + encodeURIComponent(id));
 }
 
 async function getErrorMessage(response, fallback) {
@@ -43,19 +47,53 @@ async function getErrorMessage(response, fallback) {
   }
 }
 
+function extractOrders(data) {
+  if (Array.isArray(data)) {
+    return data;
+  }
+
+  if (data && Array.isArray(data.orders)) {
+    return data.orders;
+  }
+
+  return [];
+}
+
 async function fetchOrders() {
   if (!APP_CONFIG.API_KEY) {
     return readDemoOrders();
   }
 
-  const response = await fetch(getApiUrl("/labs/api/orders"));
+  const response = await fetch(getApiUrl(getOrdersPath()));
 
   if (!response.ok) {
     throw new Error(await getErrorMessage(response, "Не удалось загрузить заказы"));
   }
 
+  return extractOrders(await response.json());
+}
+
+async function fetchOrder(id) {
+  if (!APP_CONFIG.API_KEY) {
+    const demoOrder = readDemoOrders().find(function (order) {
+      return String(order.id) === String(id);
+    });
+
+    if (!demoOrder) {
+      throw new Error("Заказ не найден");
+    }
+
+    return demoOrder;
+  }
+
+  const response = await fetch(getApiUrl(getOrdersPath(id)));
+
+  if (!response.ok) {
+    throw new Error(await getErrorMessage(response, "Не удалось загрузить заказ"));
+  }
+
   const data = await response.json();
-  return Array.isArray(data) ? data : [];
+  return data && data.order ? data.order : data;
 }
 
 async function updateOrder(id, payload) {
@@ -76,7 +114,7 @@ async function updateOrder(id, payload) {
     return orders[index];
   }
 
-  const response = await fetch(getApiUrl("/labs/api/orders/" + encodeURIComponent(id)), {
+  const response = await fetch(getApiUrl(getOrdersPath(id)), {
     method: "PUT",
     headers: {
       "Content-Type": "application/json"
@@ -106,7 +144,7 @@ async function removeOrder(id) {
     return;
   }
 
-  const response = await fetch(getApiUrl("/labs/api/orders/" + encodeURIComponent(id)), {
+  const response = await fetch(getApiUrl(getOrdersPath(id)), {
     method: "DELETE"
   });
 
@@ -264,13 +302,7 @@ function addDetailRow(container, label, value) {
   container.append(paragraph);
 }
 
-function openDetails(order) {
-  const content = document.getElementById("details-content");
-
-  if (!content) {
-    return;
-  }
-
+function renderDetails(content, order) {
   content.innerHTML = "";
 
   const composition = getOrderComposition(order).map(function (dish) {
@@ -288,8 +320,41 @@ function openDetails(order) {
   addDetailRow(content, "Адрес", order.delivery_address || "—");
   addDetailRow(content, "Комментарий", order.comment || "—");
   addDetailRow(content, "Подписка", Number(order.subscribe) ? "Да" : "Нет");
+}
 
-  document.getElementById("details-modal").hidden = false;
+async function openDetails(order) {
+  const content = document.getElementById("details-content");
+  const modal = document.getElementById("details-modal");
+
+  if (!content || !modal) {
+    return;
+  }
+
+  // Сначала показываем окно и подгружаем актуальные данные заказа по API.
+  content.innerHTML = "";
+  addDetailRow(content, "Загрузка", "получаем данные заказа…");
+  modal.hidden = false;
+
+  let freshOrder = order;
+
+  if (APP_CONFIG.API_KEY) {
+    try {
+      freshOrder = await fetchOrder(order.id);
+
+      const cached = allOrders.find(function (item) {
+        return String(item.id) === String(freshOrder.id);
+      });
+
+      if (cached) {
+        Object.assign(cached, freshOrder);
+      }
+    } catch (error) {
+      console.warn("Не удалось получить заказ с сервера, показаны данные из списка.", error);
+      showNotification(error.message || "Не удалось загрузить заказ", { type: "error" });
+    }
+  }
+
+  renderDetails(content, freshOrder);
 }
 
 function openEdit(order) {

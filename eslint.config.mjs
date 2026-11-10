@@ -17,6 +17,8 @@ const sharedGlobals = {
   ORDER_STORAGE_KEY: "readonly",
   addDetailRow: "readonly",
   allOrders: "writable",
+  buildApiUrl: "readonly",
+  buildImageUrl: "readonly",
   clearSelection: "readonly",
   collectPayload: "readonly",
   createDishCard: "readonly",

@@ -158,7 +158,7 @@ async function submitOrder(form) {
     return payload;
   }
 
-  const url = APP_CONFIG.API_BASE + "/labs/api/orders?api_key=" + encodeURIComponent(APP_CONFIG.API_KEY);
+  const url = buildApiUrl(APP_CONFIG.API_ORDERS_PATH);
   const response = await fetch(url, {
     method: "POST",
     headers: {
